@@ -98,6 +98,25 @@ async def facepalm_(message: Message):
     await check_and_send(message, "🤦‍♂")
 
 
+@userge.on_cmd("tu$", about={"header": "ThumbsUP :P"})
+async def thumbsup_(message: Message):
+    """thumbsup_"""
+    await check_and_send(message, "👍")
+
+
+@userge.on_cmd("np$", about={"header": "No Problem"})
+async def noprob_(message: Message):
+    """noprob_"""
+    await check_and_send(message, "No problem 👍")
+
+
+@userge.on_cmd("e$", about={"header": "Smile :P"})
+async def smileface_(message: Message):
+    """smileface_"""
+    await check_and_send(message, "😂")
+
+
+
 @userge.on_cmd("cry$", about={"header": "y u du dis, i cri"})
 async def cry_(message: Message):
     """cry"""
@@ -221,6 +240,11 @@ async def iqless(message: Message):
     await check_and_send(message, "♿")
 
 
+@userge.on_cmd("i$", about={"header": "send -_-"}, name="i")
+async def i(message: Message):
+    """i"""
+    await check_and_send(message, "-_-")
+
 @userge.on_cmd("moon$", about={"header": "kensar moon animation"})
 async def moon_(message: Message):
     """moon"""
@@ -282,6 +306,30 @@ async def payf_(message: Message):
         paytext * 2,
         paytext * 2,
         paytext * 2,
+    )
+    await message.edit(pay)
+
+
+
+@userge.on_cmd(
+    "l (.+)", about={"header": "Big L", "usage": "{tr}l [emoji | character]"}
+)
+async def payl_(message: Message):
+    """payl"""
+    paytext = message.input_str
+    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 2,
+        paytext * 8,
+        paytext * 8,
     )
     await message.edit(pay)
 
@@ -826,6 +874,85 @@ async def kill_func(message):
         "------>;(^。^)ノ",
         "(￣ー￣) DED",
         "<b>Target killed successfully (´°̥̥̥̥̥̥̥̥ω°̥̥̥̥̥̥̥̥｀)</b>",
+    ]
+    for i in range(10):
+        await asyncio.sleep(0.6)
+        await message.edit(animation_chars[i % 10], parse_mode="html")
+
+
+@userge.on_cmd("pruhmote$", about={"header": "promotes user to admin even if ur not"})
+async def pruhmote_func(message):
+    animation_chars = [
+        "Promoting user.",
+        "Promoting user..",
+        "Promoting user...",
+        "Promoting user..",
+        "Promoting user.",
+        "Promoting user..",
+        "Promoting user...",
+        "Promoting user..",
+        "Promoting user.",
+        "<b>Can,t promote user because he's not worthy</b>",
+    ]
+    for i in range(10):
+        await asyncio.sleep(0.6)
+        await message.edit(animation_chars[i % 10], parse_mode="html")
+
+
+
+@userge.on_cmd("admeme$", about={"header": "promotes user to admin even if ur not"})
+async def admeme_func(message):
+    animation_chars = [
+        "Promoting user.",
+        "Promoting user..",
+        "Promoting user...",
+        "Promoting user..",
+        "Promoting user.",
+        "Promoting user..",
+        "Promoting user...",
+        "Promoting user..",
+        "Promoting user.",
+        "<b>Can,t promote user because he's a retard</b>",
+    ]
+    for i in range(10):
+        await asyncio.sleep(0.6)
+        await message.edit(animation_chars[i % 10], parse_mode="html")
+
+
+
+@userge.on_cmd("owner$", about={"header": "promotes user to admin and sets him as group owner"})
+async def owner_func(message):
+    animation_chars = [
+        "Promoting user .",
+        "Promoting user..",
+        "Promoting user...",
+        "Demoting current owner..",
+        "Demoting current owner.",
+        "Demoting current owner..",
+        "Setting user as new owner...",
+        "Setting user as new owner..",
+        "Setting user as new owner.",
+        "<b>Error</b>\nCan,t set user as group owner reason:\n<b>He's a retard</b>",
+    ]
+    for i in range(10):
+        await asyncio.sleep(0.6)
+        await message.edit(animation_chars[i % 10], parse_mode="html")
+
+
+
+@userge.on_cmd("setowner$", about={"header": "promotes user to admin and sets him as group owner"})
+async def setowner_func(message):
+    animation_chars = [
+        "Promoting user .",
+        "Promoting user..",
+        "Promoting user...",
+        "Demoting current owner..",
+        "Demoting current owner.",
+        "Demoting current owner..",
+        "Setting user as new owner...",
+        "Setting user as new owner..",
+        "Setting user as new owner.",
+        "<b>Error</b>\nCan,t set user as group owner reason:\n<b>He's not worthy</b>",
     ]
     for i in range(10):
         await asyncio.sleep(0.6)

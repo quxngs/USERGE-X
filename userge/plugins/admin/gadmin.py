@@ -20,6 +20,71 @@ CHANNEL = userge.getCLogger(__name__)
 
 
 @userge.on_cmd(
+    "promotef",
+    about={
+        "header": "use this to promote group members full",
+        "description": "Provides full admin rights to the person in the supergroup.\n"
+        "you can also add custom title while promoting new admin.\n"
+        "[NOTE: Requires proper admin rights in the chat!!!]",
+        "examples": [
+            "{tr}promotef [username | userid] or [reply to user] :custom title (optional)",
+            "{tr}promotef @someusername/userid/replytouser Staff (custom title)",
+        ],
+    },
+    allow_channels=False,
+    check_promote_perm=True,
+)
+async def promotef_usr(message: Message):
+    """promotef members in tg group"""
+    chat_id = message.chat.id
+    await message.edit("`Trying to Promote User.. Hang on!! ⏳`")
+    user_id, custom_rank = message.extract_user_and_text
+    if not user_id:
+        await message.edit(
+            text="`no valid user_id or message specified,`"
+            "`do .help promotef for more info`",
+            del_in=5,
+        )
+        return
+    if custom_rank:
+        custom_rank = get_emoji_regex().sub("", custom_rank)
+        if len(custom_rank) > 15:
+            custom_rank = custom_rank[:15]
+    try:
+        get_mem = await message.client.get_chat_member(chat_id, user_id)
+        await message.client.promote_chat_member(
+            chat_id,
+            user_id,
+            can_change_info=True,
+            can_delete_messages=True,
+            can_restrict_members=True,
+            can_invite_users=True,
+            can_pin_messages=True,
+        )
+        if custom_rank:
+            await asyncio.sleep(2)
+            await message.client.set_administrator_title(chat_id, user_id, custom_rank)
+        await message.edit("`👑 Promoted Successfully..`", del_in=5)
+        await CHANNEL.log(
+            "#PROMOTE FULL\n\n"
+            f"USER: [{get_mem.user.first_name}](tg://user?id={get_mem.user.id}) "
+            f"(`{get_mem.user.id}`)\n"
+            f"CUSTOM TITLE: `{custom_rank or None}`\n"
+            f"CHAT: `{message.chat.title}` (`{chat_id}`)"
+        )
+    except UsernameInvalid:
+        await message.edit("`invalid username, try again with valid info ⚠`", del_in=5)
+    except PeerIdInvalid:
+        await message.edit(
+            "`invalid username or userid, try again with valid info ⚠`", del_in=5
+        )
+    except UserIdInvalid:
+        await message.edit("`invalid userid, try again with valid info ⚠`", del_in=5)
+    except Exception as e_f:
+        await message.edit(f"`something went wrong! 🤔`\n\n**ERROR:** `{e_f}`")
+
+
+@userge.on_cmd(
     "promote",
     about={
         "header": "use this to promote group members",
@@ -56,8 +121,6 @@ async def promote_usr(message: Message):
             chat_id,
             user_id,
             can_change_info=True,
-            can_delete_messages=True,
-            can_restrict_members=True,
             can_invite_users=True,
             can_pin_messages=True,
         )
@@ -295,6 +358,52 @@ async def kick_usr(message: Message):
         await message.edit("`invalid userid, try again with valid info ⚠`", del_in=5)
     except Exception as e_f:
         await message.edit(f"`something went wrong! 🤔`\n\n**ERROR:** `{e_f}`", del_in=5)
+
+
+@userge.on_cmd(
+    "punch",
+    about={
+        "header": "use this to kick group members",
+        "description": "Same use as Kick. Kick member from supergroup. member can rejoin the group again if they want.\n"
+        "[NOTE: Requires proper admin rights in the chat!!!]",
+        "examples": "{tr}kick [username | userid] or [reply to user]",
+    },
+    allow_channels=False,
+    check_restrict_perm=True,
+)
+async def punch_usr(message: Message):
+    """punch user from tg group"""
+    chat_id = message.chat.id
+    await message.edit("`Punching you out of the group.. Hang on!! ⏳`")
+    user_id, _ = message.extract_user_and_text
+    if not user_id:
+        await message.edit(
+            text="`no valid user_id or message specified,`"
+            "`do .help punch for more info` ⚠",
+            del_in=5,
+        )
+        return
+    try:
+        get_mem = await message.client.get_chat_member(chat_id, user_id)
+        await message.client.kick_chat_member(chat_id, user_id, int(time.time() + 60))
+        await message.edit(
+            "#PUNCH\n\n"
+            f"USER: [{get_mem.user.first_name}](tg://user?id={get_mem.user.id}) "
+            f"(`{get_mem.user.id}`)\n"
+            f"CHAT: `{message.chat.title}` (`{chat_id}`)",
+            log=__name__,
+        )
+    except UsernameInvalid:
+        await message.edit("`invalid username, try again with valid info ⚠`", del_in=5)
+    except PeerIdInvalid:
+        await message.edit(
+            "`invalid username or userid, try again with valid info ⚠`", del_in=5
+        )
+    except UserIdInvalid:
+        await message.edit("`invalid userid, try again with valid info ⚠`", del_in=5)
+    except Exception as e_f:
+        await message.edit(f"`something went wrong! 🤔`\n\n**ERROR:** `{e_f}`", del_in=5)
+
 
 
 @userge.on_cmd(

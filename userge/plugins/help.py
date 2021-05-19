@@ -58,7 +58,7 @@ _CATEGORY = {
 SAVED_SETTINGS = get_collection("CONFIGS")
 REPO_X = InlineQueryResultArticle(
     title="Repo",
-    input_message_content=InputTextMessageContent("**Here's how to setup USERGE-X** "),
+    input_message_content=InputTextMessageContent("**Here's how to setup** "),
     url="https://github.com/code-rgb/USERGE-X",
     description="Setup Your Own",
     thumb_url="https://i.imgur.com/1xsOo9o.png",
@@ -66,10 +66,10 @@ REPO_X = InlineQueryResultArticle(
         [
             [
                 InlineKeyboardButton(
-                    "🔥 USERGE-X Repo", url="https://github.com/code-rgb/USERGE-X"
+                    "🔥 Repo", url="https://github.com/code-rgb/USERGE-X"
                 ),
                 InlineKeyboardButton(
-                    "🚀 Deploy USERGE-X",
+                    "🚀 Deploy",
                     url=(
                         "https://heroku.com/deploy?template="
                         "https://github.com/code-pms/MyGpack"
@@ -168,7 +168,7 @@ if userge.has_bot:
             else:
                 user_dict = await userge.bot.get_user_dict(Config.OWNER_ID[0])
                 await c_q.answer(
-                    f"Only {user_dict['flname']} Can Access this...! Build Your USERGE-X",
+                    f"Only {user_dict['flname']} Can Access this...! Build Your own bot wen -_-",
                     show_alert=True,
                 )
 
@@ -1139,9 +1139,9 @@ if userge.has_bot:
 
             MAIN_MENU = InlineQueryResultArticle(
                 title="Main Menu",
-                input_message_content=InputTextMessageContent(" 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨 "),
+                input_message_content=InputTextMessageContent(" Bot  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨 "),
                 url="https://github.com/code-rgb/USERGE-X",
-                description="Userge-X Main Menu",
+                description="Bot Main Menu",
                 thumb_url="https://i.imgur.com/1xsOo9o.png",
                 reply_markup=InlineKeyboardMarkup(main_menu_buttons()),
             )
