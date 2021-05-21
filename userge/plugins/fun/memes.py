@@ -892,7 +892,7 @@ async def pruhmote_func(message):
         "Promoting user...",
         "Promoting user..",
         "Promoting user.",
-        "<b>Can,t promote user because he's not worthy</b>",
+        "<b>Can't promote user because he's not worthy</b>",
     ]
     for i in range(10):
         await asyncio.sleep(0.6)
@@ -912,7 +912,7 @@ async def admeme_func(message):
         "Promoting user...",
         "Promoting user..",
         "Promoting user.",
-        "<b>Can,t promote user because he's a retard</b>",
+        "<b>Can't promote user because he's a retard</b>",
     ]
     for i in range(10):
         await asyncio.sleep(0.6)
@@ -932,7 +932,7 @@ async def owner_func(message):
         "Setting user as new owner...",
         "Setting user as new owner..",
         "Setting user as new owner.",
-        "<b>Error</b>\nCan,t set user as group owner reason:\n<b>He's a retard</b>",
+        "<b>Error</b>\nCan't set user as group owner reason:\n<b>He's a retard</b>",
     ]
     for i in range(10):
         await asyncio.sleep(0.6)
@@ -952,7 +952,7 @@ async def setowner_func(message):
         "Setting user as new owner...",
         "Setting user as new owner..",
         "Setting user as new owner.",
-        "<b>Error</b>\nCan,t set user as group owner reason:\n<b>He's not worthy</b>",
+        "<b>Error</b>\nCan't set user as group owner reason:\n<b>He's not worthy</b>",
     ]
     for i in range(10):
         await asyncio.sleep(0.6)
