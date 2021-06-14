@@ -521,7 +521,7 @@ async def now_playing_(message: Message):
     if r.status_code == 204:
         spolink = "\n**I'm not listening anything right now  ;)**"
     else:
-        spolink = f"🎶 Vibing ; [{spotify_bio_.title}]({spotify_bio_.link}) - {spotify_bio_.interpret}"
+        spolink = f"🎶 Vibing ; [{spotify_bio_.title}]({spotify_bio_.link}) - {spotify_bio_.interpret} | @ping2109infos"
     await message.edit(spolink)
 
 
@@ -608,7 +608,7 @@ async def sp_recents_(message: Message):
     )
     recent_play = r.json()
     get_rec = recent_play["items"]
-    recent = "🎵 **Recently played songs:**\n"
+    recent = "🎵 **Recently played songs:**\n | @ping2109infos"
     for for_rec in get_rec:
         track = for_rec["track"]
         get_name = track["name"]
