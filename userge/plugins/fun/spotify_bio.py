@@ -521,7 +521,7 @@ async def now_playing_(message: Message):
     if r.status_code == 204:
         spolink = "\n**I'm not listening anything right now  ;)**"
     else:
-        spolink = f"🎶 Vibing ; [{spotify_bio_.title}]({spotify_bio_.link}) - {spotify_bio_.interpret} | @ping2109infos"
+        spolink = f"🎶 [{spotify_bio_.title}]({spotify_bio_.link}) - {spotify_bio_.interpret} on AirPods Pro | @ping2109infos"
     await message.edit(spolink)
 
 
