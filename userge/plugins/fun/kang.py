@@ -32,12 +32,12 @@ from userge.utils import get_response
         "usage": "Reply {tr}kang [emoji('s)] [pack number] to a sticker or "
         "an image to kang it to your userbot pack.",
         "examples": [
-            "{tr}kang",
-            "{tr}kang -s",
-            "{tr}kang -d",
-            "{tr}kang 🤔",
-            "{tr}kang 2",
-            "{tr}kang 🤔 2",
+            "{tr}flameos",
+            "{tr}flameos -s",
+            "{tr}flameos -d",
+            "{tr}flameos 🔥",
+            "{tr}flameos 2",
+            "{tr}flameos 🔥 2",
         ],
     },
     allow_channels=False,
@@ -90,7 +90,7 @@ async def kang_(message: Message):
         ):
             emoji_ = None
         if not emoji_:
-            emoji_ = "🤔"
+            emoji_ = "🔥"
 
         u_name = user.username
         u_name = "@" + u_name if u_name else user.first_name or user.id
@@ -286,7 +286,7 @@ async def kang_(message: Message):
         ):
             emoji_ = None
         if not emoji_:
-            emoji_ = "🤔"
+            emoji_ = "🔥"
 
         u_name = user.username
         u_name = "@" + u_name if u_name else user.first_name or user.id
@@ -489,7 +489,7 @@ async def kang_(message: Message):
         ):
             emoji_ = None
         if not emoji_:
-            emoji_ = "🤔"
+            emoji_ = "🔥"
 
         u_name = user.username
         u_name = "@" + u_name if u_name else user.first_name or user.id
