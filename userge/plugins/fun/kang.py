@@ -25,7 +25,7 @@ from userge.utils import get_response
 
 
 @userge.on_cmd(
-    "kang",
+    "flameos",
     about={
         "header": "kangs stickers or creates new ones",
         "flags": {"-s": "without link", "-d": "without trace"},
