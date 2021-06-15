@@ -25,7 +25,7 @@ pmCounter: Dict[int, int] = {}
 allowAllFilter = filters.create(lambda _, __, ___: Config.ALLOW_ALL_PMS)
 noPmMessage = bk_noPmMessage = (
     "Hello {fname} this is an automated message\n"
-    "Please wait until you get approved to direct message "
+    "Please wait until I answer or ping me in a group instead since I never read PMs"
     "And please dont spam until then "
 )
 blocked_message = bk_blocked_message = "**You were automatically blocked**"
