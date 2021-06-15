@@ -32,10 +32,10 @@ PATH_ = f"{Config.CACHE_PATH}/spotify_database.json"
 # [---------------------------] Constants [------------------------------]
 KEY = "🎶"
 BIOS = [
-    KEY + " Vibing : {interpret} - {title}",
-    KEY + " : {interpret} - {title}",
-    KEY + " Vibing : {title}",
-    KEY + " : {title}",
+    KEY + " Vibing : {interpret} - {title} | @ping2109infos",
+    KEY + " : {interpret} - {title} | @ping2109infos",
+    KEY + " Vibing : {title} | @ping2109infos",
+    KEY + " : {title} | @ping2109infos",
 ]
 OFFSET = 1
 # reduce the OFFSET from our actual 70 character limit
