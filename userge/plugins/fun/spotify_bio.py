@@ -32,10 +32,8 @@ PATH_ = f"{Config.CACHE_PATH}/spotify_database.json"
 # [---------------------------] Constants [------------------------------]
 KEY = "🎶"
 BIOS = [
-    KEY + " Vibing : {interpret} - {title} | @ping2109infos",
-    KEY + " : {interpret} - {title} | @ping2109infos",
-    KEY + " Vibing : {title} | @ping2109infos",
-    KEY + " : {title} | @ping2109infos",
+    KEY + " {title} - {interpret} | @ping2109infos",
+    KEY + " {title} on AirPods Pro| @ping2109infos",
 ]
 OFFSET = 1
 # reduce the OFFSET from our actual 70 character limit
@@ -567,7 +565,7 @@ async def sp_info_(message: Message):
         currently_playing_song_dur = f"{spotify_bio_.progress}/{spotify_bio_.duration}"
         # ==================ASSINGING_VAR_VLAUE=======================================#
         status_pn = f"""
-    **Device name:** {device_name} ({device_type})
+    **Device name:** iPhone của Vinh (AirPods Pro của Vinh)
     **Device volume:** {device_vol}%
     **Currently playing song:** {currently_playing_song}
     **Duration:** {currently_playing_song_dur}
