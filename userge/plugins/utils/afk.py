@@ -196,9 +196,9 @@ async def handle_afk_outgoing(message: Message) -> None:
 
 AFK_REASONS = (
     "Life is too short for me to spy here so ping me later (not recommended because I will always flex about my AirPods Pro anyway)",
-    "I am not here right now...\nbut I might be installing FlameOS\n\wouldn't that be awesome?",
+    "I am not here right now...\nbut I might be installing FlameOS\nwouldn't that be awesome?",
     "Your Neva boi is fapping right now! Feel free to ping him later when he comes back if he can remember to come back",
     "Neva is trying hard to change his ✨ AirPods Pro's ✨ silicone tip, feel free to do it with him! Oh sorry I forgot that you can't afford them!",
     "Nhà bao việc có gì nhắn tui lại sau đi",
-    "Never gonna give you up, never gonna let you down. Neva is gonna turn around and hurt you if you continues to ping him",
+    "Never gonna give you up\nNever gonna let you down\nNeva is gonna turn around and hurt you if you continues to ping him.",
 )
