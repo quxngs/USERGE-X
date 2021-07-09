@@ -32,7 +32,7 @@ PATH_ = f"{Config.CACHE_PATH}/spotify_database.json"
 # [---------------------------] Constants [------------------------------]
 KEY = "🎶"
 BIOS = [
-    KEY + " {title} - {interpet} | penk2109.github.io",
+    KEY + " {title} - {interpret} | penk2109.github.io",
     KEY + " {title} | penk2109.github.io",
 ]
 OFFSET = 1
