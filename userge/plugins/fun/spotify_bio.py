@@ -492,7 +492,7 @@ async def spotify_bio_toggle(message: Message):
         await message.edit(" `Spotify Bio disabled !`", del_in=4)
     else:
         await message.edit(
-            "✅ `Spotify Bio enabled` \nCurrent Spotify playback will updated in the Bio",
+            "✅ `Spotify Bio bật r nha.` \nNghe bài nào, bio có bài đó.",
             del_in=4,
         )
         USER_INITIAL_BIO["bio"] = (
@@ -606,7 +606,7 @@ async def sp_recents_(message: Message):
     )
     recent_play = r.json()
     get_rec = recent_play["items"]
-    recent = "🎵 **Recently played songs:**\n | @ping2109infos"
+    recent = "🎵 **Recently played songs:**\n | @quxngbio"
     for for_rec in get_rec:
         track = for_rec["track"]
         get_name = track["name"]
