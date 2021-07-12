@@ -565,7 +565,7 @@ async def sp_info_(message: Message):
         currently_playing_song_dur = f"{spotify_bio_.progress}/{spotify_bio_.duration}"
         # ==================ASSINGING_VAR_VLAUE=======================================#
         status_pn = f"""
-    **Device name:** iPhone của Vinh (AirPods Pro của Vinh)
+    **Device name:** Chinese barbie phone (ProPods Air của Dzinh™)
     **Device volume:** {device_vol}%
     **Currently playing song:** {currently_playing_song}
     **Duration:** {currently_playing_song_dur}
